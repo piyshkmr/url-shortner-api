@@ -10,7 +10,7 @@ app.use(express.json({ extended: false }));
 // db connetions
 mongoose
   .connect(
-    "mongodb+srv://piyush:piyush1234@cluster0.iific.mongodb.net/urlshortner?retryWrites=true&w=majority"
+    process.env.DB_URL
   )
   .then(() => console.log("connected to db"))
   .catch((err) => console.log(err.message));
